@@ -1,0 +1,7 @@
+{
+  "title": "Battery",
+  "charging": "Charging",
+  "discharging": "Discharging",
+  "full": "Full",
+  "unknown": "Unknown"
+}

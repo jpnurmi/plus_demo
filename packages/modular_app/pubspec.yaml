@@ -1,0 +1,29 @@
+name: modular_app
+description: A modular Flutter app.
+publish_to: "none"
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.8.0"
+
+dependencies:
+  battery_module:
+    path: ../modules/battery_module
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  language_module:
+    path: ../modules/language_module
+  modular_module:
+    path: ../modular_module
+  network_module:
+    path: ../modules/network_module
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true

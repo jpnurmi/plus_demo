@@ -1,0 +1,6 @@
+arb-dir: lib/src/l10n
+template-arb-file: battery_en.arb
+output-localization-file: battery_localizations.dart
+output-class: BatteryLocalizations
+nullable-getter: false
+synthetic-package: false

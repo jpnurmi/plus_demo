@@ -1,0 +1,24 @@
+name: battery_module
+description: An example module for a modular Flutter app.
+publish_to: "none"
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.8.0"
+
+dependencies:
+  battery_plus: ^2.0.2
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  modular_module:
+    path: ../../modular_module
+  provider: ^6.0.1
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+
+flutter:
+  generate: true

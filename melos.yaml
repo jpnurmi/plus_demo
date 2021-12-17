@@ -1,0 +1,7 @@
+name: modular_app_example
+
+packages:
+  - packages/**
+
+ignore:
+  - synthetic_package
