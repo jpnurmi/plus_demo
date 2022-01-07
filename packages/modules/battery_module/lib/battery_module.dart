@@ -17,7 +17,7 @@ class BatteryModule implements ModularModule {
   LocalizationsDelegate get localizations => BatteryLocalizations.delegate;
 
   @override
-  SingleChildWidget get provider {
+  InheritedProvider get provider {
     return Provider<BatteryService>(
       create: (_) => BatteryService(),
       dispose: (_, service) => service.close(),

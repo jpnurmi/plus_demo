@@ -17,7 +17,7 @@ class NetworkModule implements ModularModule {
   LocalizationsDelegate get localizations => NetworkLocalizations.delegate;
 
   @override
-  SingleChildWidget get provider {
+  InheritedProvider get provider {
     return Provider<NetworkService>(
       create: (_) => NetworkService(),
       dispose: (context, service) => service.close(),

@@ -1,3 +1,3 @@
-# modular_app_example
+# modular_app
 
-A modular Flutter example project.
+A modular Flutter app example.

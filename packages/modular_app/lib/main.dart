@@ -7,9 +7,9 @@ import 'package:network_module/network_module.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+  final binding = WidgetsFlutterBinding.ensureInitialized();
   runApp(ModularApp(
-    locale: WidgetsFlutterBinding.ensureInitialized().window.locale,
+    locale: binding.window.locale,
     modules: <ModularModule>[
       NetworkModule(),
       BatteryModule(),
