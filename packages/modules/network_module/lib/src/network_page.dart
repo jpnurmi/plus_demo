@@ -1,5 +1,5 @@
-import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
+import 'package:modular_service/modular_service.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/network_localizations.dart';
@@ -15,7 +15,7 @@ class NetworkPage extends StatefulWidget {
 
   static Widget body(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => NetworkModel(GetIt.I<NetworkService>()),
+      create: (_) => NetworkModel(getService<NetworkService>()),
       child: const NetworkPage(),
     );
   }

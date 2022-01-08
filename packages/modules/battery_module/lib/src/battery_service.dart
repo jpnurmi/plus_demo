@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:battery_plus/battery_plus.dart';
-import 'package:get_it/get_it.dart';
+import 'package:modular_service/modular_service.dart';
 
 export 'package:battery_plus/battery_plus.dart' show BatteryState;
 
-class BatteryService implements Disposable {
+class BatteryService implements ModularService {
   Battery? _battery;
   BatteryState? _state;
   StreamController<BatteryState>? _controller;
@@ -17,7 +17,8 @@ class BatteryService implements Disposable {
     return _controller!.stream;
   }
 
-  Future<void> init() async {
+  @override
+  FutureOr<void> onInit() {
     _battery ??= Battery();
     _controller ??= StreamController<BatteryState>.broadcast();
     _subscription ??= _battery!.onBatteryStateChanged.listen((state) {

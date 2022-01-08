@@ -12,7 +12,7 @@ class BatteryModel extends ChangeNotifier {
   BatteryState? get state => _service.state;
 
   Future<void> init() async {
-    await _service.init();
+    await _service.onInit();
     _sub = _service.onStateChanged.listen((_) => notifyListeners());
   }
 

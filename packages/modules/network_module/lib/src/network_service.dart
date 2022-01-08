@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:get_it/get_it.dart';
+import 'package:modular_service/modular_service.dart';
 
 typedef NetworkState = ConnectivityResult;
 
-class NetworkService implements Disposable {
+class NetworkService implements ModularService {
   Connectivity? _connectivity;
   NetworkState? _state;
   StreamController<NetworkState>? _controller;
@@ -17,7 +17,8 @@ class NetworkService implements Disposable {
     return _controller!.stream;
   }
 
-  Future<void> init() async {
+  @override
+  FutureOr<void> onInit() {
     _connectivity ??= Connectivity();
     _controller ??= StreamController<NetworkState>.broadcast();
     _subscription ??= _connectivity!.onConnectivityChanged.listen((state) {

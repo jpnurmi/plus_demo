@@ -1,0 +1,15 @@
+name: modular_service
+description: Service locator for a modular Flutter app.
+publish_to: "none"
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.8.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get_it: ^7.2.0
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
