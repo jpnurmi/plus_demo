@@ -44,13 +44,8 @@ class ModularApp extends StatelessWidget {
                 .map((module) => module.localizations!),
           ],
           onGenerateTitle: (context) => AppLocalizations.of(context).title,
-          home: MultiProvider(
-            providers: [
-              ChangeNotifierProvider.value(value: locale),
-              ...modules
-                  .where((module) => module.provider != null)
-                  .map((module) => module.provider!)
-            ],
+          home: ChangeNotifierProvider.value(
+            value: locale,
             child: ModularPage(modules: modules),
           ),
         );

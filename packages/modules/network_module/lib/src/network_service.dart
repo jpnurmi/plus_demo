@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:get_it/get_it.dart';
 
 typedef NetworkState = ConnectivityResult;
 
-class NetworkService {
+class NetworkService implements Disposable {
   Connectivity? _connectivity;
   NetworkState? _state;
   StreamController<NetworkState>? _controller;
@@ -25,7 +26,8 @@ class NetworkService {
     });
   }
 
-  Future<void> close() async {
+  @override
+  Future<void> onDispose() async {
     await _subscription?.cancel();
     await _controller?.close();
   }

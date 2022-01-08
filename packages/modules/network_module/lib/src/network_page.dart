@@ -1,3 +1,4 @@
+import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,7 @@ class NetworkPage extends StatefulWidget {
 
   static Widget body(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => NetworkModel(context.read<NetworkService>()),
+      create: (_) => NetworkModel(GetIt.I<NetworkService>()),
       child: const NetworkPage(),
     );
   }

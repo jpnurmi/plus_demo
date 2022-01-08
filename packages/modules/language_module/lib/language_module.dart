@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:modular_module/modular_module.dart';
-import 'package:provider/provider.dart';
 
 import 'src/l10n/language_localizations.dart';
 import 'src/language_page.dart';
@@ -14,7 +13,4 @@ class LanguageModule implements ModularModule {
 
   @override
   LocalizationsDelegate get localizations => LanguageLocalizations.delegate;
-
-  @override
-  InheritedProvider? get provider => null;
 }

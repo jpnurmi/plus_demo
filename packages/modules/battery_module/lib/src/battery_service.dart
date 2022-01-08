@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:battery_plus/battery_plus.dart';
+import 'package:get_it/get_it.dart';
 
 export 'package:battery_plus/battery_plus.dart' show BatteryState;
 
-class BatteryService {
+class BatteryService implements Disposable {
   Battery? _battery;
   BatteryState? _state;
   StreamController<BatteryState>? _controller;
@@ -25,7 +26,8 @@ class BatteryService {
     });
   }
 
-  Future<void> close() async {
+  @override
+  Future<void> onDispose() async {
     await _subscription?.cancel();
     await _controller?.close();
   }

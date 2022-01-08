@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  get_it: ^7.2.0
   intl: ^0.17.0
   modular_module:
     path: ../../modular_module
