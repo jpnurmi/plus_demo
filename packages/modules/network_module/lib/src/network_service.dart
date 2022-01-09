@@ -5,13 +5,23 @@ import 'package:modular_service/modular_service.dart';
 
 typedef NetworkState = ConnectivityResult;
 
-class NetworkService implements ModularService {
+abstract class NetworkService implements ModularService {
+  factory NetworkService() => _NetworkPlusService();
+
+  NetworkState? get state;
+  Stream<NetworkState> get onStateChanged;
+}
+
+class _NetworkPlusService implements NetworkService {
   Connectivity? _connectivity;
   NetworkState? _state;
   StreamController<NetworkState>? _controller;
   StreamSubscription<NetworkState>? _subscription;
 
+  @override
   NetworkState? get state => _state;
+
+  @override
   Stream<NetworkState> get onStateChanged {
     assert(_controller != null, 'Call NetworkService.init()');
     return _controller!.stream;

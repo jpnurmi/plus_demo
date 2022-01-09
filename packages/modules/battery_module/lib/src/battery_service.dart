@@ -5,13 +5,23 @@ import 'package:modular_service/modular_service.dart';
 
 export 'package:battery_plus/battery_plus.dart' show BatteryState;
 
-class BatteryService implements ModularService {
+abstract class BatteryService implements ModularService {
+  factory BatteryService() => _BatteryPlusService();
+
+  BatteryState? get state;
+  Stream<BatteryState> get onStateChanged;
+}
+
+class _BatteryPlusService implements BatteryService {
   Battery? _battery;
   BatteryState? _state;
   StreamController<BatteryState>? _controller;
   StreamSubscription<BatteryState>? _subscription;
 
+  @override
   BatteryState? get state => _state;
+
+  @override
   Stream<BatteryState> get onStateChanged {
     assert(_controller != null, 'Call BatteryService.init()');
     return _controller!.stream;
