@@ -5,6 +5,7 @@ import 'package:language_module/language_module.dart';
 import 'package:modular_module/modular_module.dart';
 import 'package:network_module/network_module.dart';
 import 'package:provider/provider.dart';
+import 'package:yaru/yaru.dart';
 
 void main() {
   final binding = WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +45,8 @@ class ModularApp extends StatelessWidget {
                 .map((module) => module.localizations!),
           ],
           onGenerateTitle: (context) => AppLocalizations.of(context).title,
+          theme: yaruLight,
+          darkTheme: yaruDark,
           home: ChangeNotifierProvider.value(
             value: locale,
             child: ModularPage(modules: modules),

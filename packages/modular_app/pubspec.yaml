@@ -20,6 +20,7 @@ dependencies:
     path: ../modular_module
   network_module:
     path: ../modules/network_module
+  yaru: ^0.2.0
 
 dev_dependencies:
   flutter_lints: ^1.0.0
