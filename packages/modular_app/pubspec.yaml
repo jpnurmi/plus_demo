@@ -20,6 +20,8 @@ dependencies:
     path: ../modular_module
   network_module:
     path: ../modules/network_module
+  theme_module:
+    path: ../modules/theme_module
   yaru: ^0.2.0
 
 dev_dependencies:

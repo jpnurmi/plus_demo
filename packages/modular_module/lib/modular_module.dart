@@ -12,13 +12,16 @@ class ModularApp extends InheritedWidget {
   ModularApp({
     Key? key,
     required Locale locale,
+    ThemeMode themeMode = ThemeMode.system,
     required this.modules,
     required Widget child,
   })  : locale = ValueNotifier(locale),
+        themeMode = ValueNotifier(themeMode),
         super(key: key, child: child);
 
   final ValueNotifier<Locale> locale;
   final Iterable<ModularModule> modules;
+  final ValueNotifier<ThemeMode> themeMode;
 
   static ModularApp of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<ModularApp>()!;

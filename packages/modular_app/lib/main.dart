@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:language_module/language_module.dart';
 import 'package:modular_module/modular_module.dart';
 import 'package:network_module/network_module.dart';
+import 'package:theme_module/theme_module.dart';
 import 'package:yaru/yaru.dart';
 
 void main() {
@@ -14,6 +15,7 @@ void main() {
       NetworkModule(),
       BatteryModule(),
       LanguageModule(),
+      ThemeModule(),
     ],
     child: const ModularPage(),
   ));
@@ -25,11 +27,11 @@ class ModularPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final app = ModularApp.of(context);
-    return ValueListenableBuilder<Locale>(
-      valueListenable: app.locale,
-      builder: (context, value, child) {
+    return AnimatedBuilder(
+      animation: Listenable.merge([app.locale, app.themeMode]),
+      builder: (context, child) {
         return MaterialApp(
-          locale: value,
+          locale: app.locale.value,
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: [
             ...AppLocalizations.localizationsDelegates,
@@ -40,6 +42,7 @@ class ModularPage extends StatelessWidget {
           onGenerateTitle: (context) => AppLocalizations.of(context).title,
           theme: yaruLight,
           darkTheme: yaruDark,
+          themeMode: app.themeMode.value,
           home: ModularLayout(modules: app.modules),
         );
       },
