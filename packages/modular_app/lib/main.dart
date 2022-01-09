@@ -4,7 +4,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:language_module/language_module.dart';
 import 'package:modular_module/modular_module.dart';
 import 'package:network_module/network_module.dart';
-import 'package:provider/provider.dart';
 import 'package:yaru/yaru.dart';
 
 void main() {
@@ -16,72 +15,58 @@ void main() {
       BatteryModule(),
       LanguageModule(),
     ],
+    child: const ModularPage(),
   ));
 }
 
-class ModularApp extends StatelessWidget {
-  ModularApp({
-    Key? key,
-    required Locale locale,
-    required this.modules,
-  })  : locale = ValueNotifier(locale),
-        super(key: key);
-
-  final ValueNotifier<Locale> locale;
-  final Iterable<ModularModule> modules;
+class ModularPage extends StatelessWidget {
+  const ModularPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final app = ModularApp.of(context);
     return ValueListenableBuilder<Locale>(
-      valueListenable: locale,
+      valueListenable: app.locale,
       builder: (context, value, child) {
         return MaterialApp(
           locale: value,
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: [
             ...AppLocalizations.localizationsDelegates,
-            ...modules
+            ...app.modules
                 .where((module) => module.localizations != null)
                 .map((module) => module.localizations!),
           ],
           onGenerateTitle: (context) => AppLocalizations.of(context).title,
           theme: yaruLight,
           darkTheme: yaruDark,
-          home: ChangeNotifierProvider.value(
-            value: locale,
-            child: ModularPage(modules: modules),
-          ),
+          home: ModularLayout(modules: app.modules),
         );
       },
     );
   }
 }
 
-class ModularPage extends StatefulWidget {
-  const ModularPage({Key? key, required this.modules}) : super(key: key);
+class ModularLayout extends StatelessWidget {
+  const ModularLayout({Key? key, required this.modules}) : super(key: key);
 
   final Iterable<ModularModule> modules;
 
   @override
-  State<ModularPage> createState() => _ModularPageState();
-}
-
-class _ModularPageState extends State<ModularPage> {
-  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: widget.modules.length,
+      length: modules.length,
       child: Scaffold(
         appBar: AppBar(
           title: Text(AppLocalizations.of(context).title),
           bottom: TabBar(
-            tabs: widget.modules.map((module) {
+            tabs: modules.map((module) {
               return Tab(child: module.title(context));
             }).toList(),
           ),
         ),
         body: TabBarView(
-          children: widget.modules.map((module) {
+          children: modules.map((module) {
             return module.body(context);
           }).toList(),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modular_module/modular_module.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/language_localizations.dart';
@@ -41,8 +42,8 @@ class _LanguagePageState extends State<LanguagePage> {
             title: Center(child: Text(model.languages[index])),
             selected: model.locales[index] == Localizations.localeOf(context),
             onTap: () {
-              final locale = context.read<ValueNotifier<Locale>>();
-              locale.value = model.locales[index];
+              final app = ModularApp.of(context);
+              app.locale.value = model.locales[index];
             },
           );
         },
