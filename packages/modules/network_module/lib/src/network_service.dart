@@ -18,7 +18,7 @@ class NetworkService implements ModularService {
   }
 
   @override
-  FutureOr<void> onInit() {
+  FutureOr<void> init() {
     _connectivity ??= Connectivity();
     _controller ??= StreamController<NetworkState>.broadcast();
     _subscription ??= _connectivity!.onConnectivityChanged.listen((state) {
@@ -28,7 +28,7 @@ class NetworkService implements ModularService {
   }
 
   @override
-  Future<void> onDispose() async {
+  Future<void> dispose() async {
     await _subscription?.cancel();
     await _controller?.close();
   }

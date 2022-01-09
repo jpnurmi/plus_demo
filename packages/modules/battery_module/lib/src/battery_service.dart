@@ -18,7 +18,7 @@ class BatteryService implements ModularService {
   }
 
   @override
-  FutureOr<void> onInit() {
+  FutureOr<void> init() {
     _battery ??= Battery();
     _controller ??= StreamController<BatteryState>.broadcast();
     _subscription ??= _battery!.onBatteryStateChanged.listen((state) {
@@ -28,7 +28,7 @@ class BatteryService implements ModularService {
   }
 
   @override
-  Future<void> onDispose() async {
+  Future<void> dispose() async {
     await _subscription?.cancel();
     await _controller?.close();
   }

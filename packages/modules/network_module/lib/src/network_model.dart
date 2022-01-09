@@ -12,7 +12,7 @@ class NetworkModel extends ChangeNotifier {
   NetworkState? get state => _service.state;
 
   Future<void> init() async {
-    await _service.onInit();
+    await _service.init();
     _sub = _service.onStateChanged.listen((_) => notifyListeners());
   }
 
