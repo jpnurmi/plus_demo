@@ -1,45 +1,27 @@
 import 'dart:async';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:network_info_plus/network_info_plus.dart';
 import 'package:modular_interface/modular_interface.dart';
-
-typedef NetworkState = ConnectivityResult;
 
 abstract class NetworkService implements ModularService {
   factory NetworkService() => _NetworkPlusService();
 
-  NetworkState? get state;
-  Stream<NetworkState> get onStateChanged;
+  Future<String?> getIP();
+  Future<String?> getName();
 }
 
 class _NetworkPlusService implements NetworkService {
-  Connectivity? _connectivity;
-  NetworkState? _state;
-  StreamController<NetworkState>? _controller;
-  StreamSubscription<NetworkState>? _subscription;
+  NetworkInfo? _info;
 
   @override
-  NetworkState? get state => _state;
+  Future<String?> getIP() => _info!.getWifiIP();
 
   @override
-  Stream<NetworkState> get onStateChanged {
-    assert(_controller != null, 'Call NetworkService.init()');
-    return _controller!.stream;
-  }
+  Future<String?> getName() => _info!.getWifiName();
 
   @override
-  FutureOr<void> init() {
-    _connectivity ??= Connectivity();
-    _controller ??= StreamController<NetworkState>.broadcast();
-    _subscription ??= _connectivity!.onConnectivityChanged.listen((state) {
-      _state = state;
-      _controller?.add(state);
-    });
-  }
+  FutureOr<void> init() => _info ??= NetworkInfo();
 
   @override
-  Future<void> dispose() async {
-    await _subscription?.cancel();
-    await _controller?.close();
-  }
+  FutureOr<void> dispose() {}
 }

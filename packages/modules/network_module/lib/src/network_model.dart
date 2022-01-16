@@ -7,18 +7,16 @@ class NetworkModel extends ChangeNotifier {
   NetworkModel(this._service);
 
   final NetworkService _service;
-  StreamSubscription? _sub;
+  String? _ip;
+  String? _name;
 
-  NetworkState? get state => _service.state;
+  String? get ip => _ip;
+  String? get name => _name;
 
   Future<void> init() async {
     await _service.init();
-    _sub = _service.onStateChanged.listen((_) => notifyListeners());
-  }
-
-  @override
-  void dispose() {
-    _sub?.cancel();
-    super.dispose();
+    _ip = await _service.getIP();
+    _name = await _service.getName();
+    notifyListeners();
   }
 }

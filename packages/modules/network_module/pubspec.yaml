@@ -7,7 +7,6 @@ environment:
   flutter: ">=2.8.0"
 
 dependencies:
-  connectivity_plus: ^2.1.0
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -15,6 +14,7 @@ dependencies:
   intl: ^0.17.0
   modular_interface:
     path: ../../modular_interface
+  network_info_plus: ^2.1.2
   provider: ^6.0.1
 
 dev_dependencies:

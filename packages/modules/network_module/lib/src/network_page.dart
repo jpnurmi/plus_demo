@@ -34,22 +34,14 @@ class _NetworkPageState extends State<NetworkPage> {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<NetworkModel>();
-    return Center(
-      child: model.state == null
-          ? const CircularProgressIndicator()
-          : Text(model.state!.localize(context)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
+      child: Column(
+        children: [
+          ListTile(title: Center(child: Text('Name: ${model.name}'))),
+          ListTile(title: Center(child: Text('IP: ${model.ip}'))),
+        ],
+      ),
     );
-  }
-}
-
-extension NetworkStateL10n on NetworkState {
-  String localize(BuildContext context) {
-    final l10n = NetworkLocalizations.of(context);
-    switch (this) {
-      case NetworkState.none:
-        return l10n.offline;
-      default:
-        return l10n.online;
-    }
   }
 }
