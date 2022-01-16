@@ -10,11 +10,13 @@ class LandscapeLayout extends StatefulWidget {
     required this.index,
     required this.modules,
     required this.onSelected,
+    this.actions,
   }) : super(key: key);
 
   final int index;
   final List<PlusModule> modules;
   final ValueChanged<int> onSelected;
+  final List<Widget>? actions;
 
   @override
   State<LandscapeLayout> createState() => _LandscapeLayoutState();
@@ -42,6 +44,7 @@ class _LandscapeLayoutState extends State<LandscapeLayout> {
             right: AppBar(
               centerTitle: false,
               title: widget.modules[_index].title(context),
+              actions: widget.actions,
             ),
           ),
           Expanded(

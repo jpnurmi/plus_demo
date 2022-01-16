@@ -1,3 +1,8 @@
 {
-  "title": "Modulært App"
+  "language": "Språk",
+  "locale": "Norsk",
+  "theme": "Tema",
+  "system": "System",
+  "light": "Lys",
+  "dark": "Mørk"
 }

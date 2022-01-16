@@ -8,11 +8,13 @@ class PortraitLayout extends StatefulWidget {
     required this.index,
     required this.modules,
     required this.onSelected,
+    this.actions,
   }) : super(key: key);
 
   final int index;
   final List<PlusModule> modules;
   final ValueChanged<int> onSelected;
+  final List<Widget>? actions;
 
   @override
   _PortraitLayoutState createState() => _PortraitLayoutState();
@@ -35,6 +37,7 @@ class _PortraitLayoutState extends State<PortraitLayout> {
                 _navigator.pop(context);
               },
             ),
+            actions: widget.actions,
           ),
           body: widget.modules[index].body(context),
         );

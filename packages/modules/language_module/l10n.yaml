@@ -1,6 +1,0 @@
-arb-dir: lib/src/l10n
-template-arb-file: language_en.arb
-output-localization-file: language_localizations.dart
-output-class: LanguageLocalizations
-nullable-getter: false
-synthetic-package: false

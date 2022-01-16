@@ -1,3 +1,8 @@
 {
-  "title": "Modulaarinen Appi"
+  "language": "Kieli",
+  "locale": "Suomi",
+  "theme": "Teema",
+  "system": "Järjestelmä",
+  "light": "Vaalea",
+  "dark": "Tumma"
 }

@@ -16,14 +16,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  language_module:
-    path: ../modules/language_module
   network_info_module:
     path: ../modules/network_info_module
   plus_core:
     path: ../plus_core
-  theme_module:
-    path: ../modules/theme_module
   yaru: ^0.2.0
 
 dev_dependencies:

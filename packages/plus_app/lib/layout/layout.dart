@@ -5,9 +5,14 @@ import 'landscape.dart';
 import 'portrait.dart';
 
 class PlusLayout extends StatefulWidget {
-  const PlusLayout({Key? key, required this.modules}) : super(key: key);
+  const PlusLayout({
+    Key? key,
+    required this.modules,
+    this.actions,
+  }) : super(key: key);
 
   final List<PlusModule> modules;
+  final List<Widget>? actions;
 
   @override
   State<PlusLayout> createState() => _PlusLayoutState();
@@ -32,12 +37,14 @@ class _PlusLayoutState extends State<PlusLayout> {
               index: _index,
               modules: widget.modules,
               onSelected: _setIndex,
+              actions: widget.actions,
             );
           case Orientation.landscape:
             return LandscapeLayout(
               index: _index == -1 ? _previousIndex : _index,
               modules: widget.modules,
               onSelected: _setIndex,
+              actions: widget.actions,
             );
         }
       },

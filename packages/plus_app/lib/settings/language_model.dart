@@ -1,8 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
-
-import 'l10n/language_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LanguageModel extends ChangeNotifier {
   LanguageModel();
@@ -10,7 +9,7 @@ class LanguageModel extends ChangeNotifier {
   List<String>? _languages;
 
   List<String> get languages => _languages ??= [];
-  List<Locale> get locales => LanguageLocalizations.supportedLocales;
+  List<Locale> get locales => AppLocalizations.supportedLocales;
 
   Future<void> init() async {
     _languages = await _loadLanguages();
@@ -26,7 +25,7 @@ class LanguageModel extends ChangeNotifier {
   }
 
   Future<String> _loadLanguage(Locale locale) async {
-    final l10n = await LanguageLocalizations.delegate.load(locale);
-    return l10n.language;
+    final l10n = await AppLocalizations.delegate.load(locale);
+    return l10n.locale;
   }
 }
