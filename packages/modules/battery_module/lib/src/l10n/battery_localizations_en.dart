@@ -11,6 +11,12 @@ class BatteryLocalizationsEn extends BatteryLocalizations {
   String get title => 'Battery';
 
   @override
+  String get state => 'State';
+
+  @override
+  String get level => 'Level';
+
+  @override
   String get charging => 'Charging';
 
   @override

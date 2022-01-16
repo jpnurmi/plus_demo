@@ -34,16 +34,25 @@ class _BatteryPageState extends State<BatteryPage> {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<BatteryModel>();
+    final l10n = BatteryLocalizations.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
-      child: model.state == null
-          ? const CircularProgressIndicator()
-          : ListTile(
-              title: Text(
-                model.state!.localize(context),
-                textAlign: TextAlign.center,
-              ),
+      padding: const EdgeInsets.all(4),
+      child: ListView(
+        children: [
+          Card(
+            child: ListTile(
+              title: Text(model.state?.localize(context) ?? ''),
+              subtitle: Text(l10n.state),
             ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.level != null ? '${model.level}%' : ''),
+              subtitle: Text(l10n.level),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

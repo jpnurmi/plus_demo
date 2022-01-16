@@ -8,31 +8,32 @@ export 'package:battery_plus/battery_plus.dart' show BatteryState;
 abstract class BatteryService implements PlusService {
   factory BatteryService() => _BatteryPlusService();
 
-  BatteryState? get state;
+  Future<int> get level;
+  Future<BatteryState> get state;
   Stream<BatteryState> get onStateChanged;
 }
 
 class _BatteryPlusService implements BatteryService {
   Battery? _battery;
-  BatteryState? _state;
   StreamController<BatteryState>? _controller;
   StreamSubscription<BatteryState>? _subscription;
 
   @override
-  BatteryState? get state => _state;
+  Future<int> get level => _battery!.batteryLevel;
+
+  @override
+  Future<BatteryState> get state => _battery!.batteryState;
 
   @override
   Stream<BatteryState> get onStateChanged {
-    assert(_controller != null, 'Call BatteryService.init()');
+    _controller ??= StreamController<BatteryState>.broadcast();
     return _controller!.stream;
   }
 
   @override
   FutureOr<void> init() {
     _battery ??= Battery();
-    _controller ??= StreamController<BatteryState>.broadcast();
     _subscription ??= _battery!.onBatteryStateChanged.listen((state) {
-      _state = state;
       _controller?.add(state);
     });
   }

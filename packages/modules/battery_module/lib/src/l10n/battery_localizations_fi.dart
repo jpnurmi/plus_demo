@@ -11,6 +11,12 @@ class BatteryLocalizationsFi extends BatteryLocalizations {
   String get title => 'Akku';
 
   @override
+  String get state => 'State';
+
+  @override
+  String get level => 'Level';
+
+  @override
   String get charging => 'Charging';
 
   @override

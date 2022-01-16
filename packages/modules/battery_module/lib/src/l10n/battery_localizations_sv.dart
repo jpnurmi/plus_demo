@@ -11,6 +11,12 @@ class BatteryLocalizationsSv extends BatteryLocalizations {
   String get title => 'Batteri';
 
   @override
+  String get state => 'State';
+
+  @override
+  String get level => 'Level';
+
+  @override
   String get charging => 'Charging';
 
   @override

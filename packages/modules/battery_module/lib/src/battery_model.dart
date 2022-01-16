@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:plus_core/plus_core.dart';
+
 import 'battery_service.dart';
 
 class BatteryModel extends ChangeNotifier {
@@ -9,12 +9,23 @@ class BatteryModel extends ChangeNotifier {
 
   final BatteryService _service;
   StreamSubscription? _sub;
+  int? _level;
+  BatteryState? _state;
 
-  BatteryState? get state => _service.state;
+  int? get level => _level;
+  BatteryState? get state => _state;
 
   Future<void> init() async {
     await _service.init();
     _sub = _service.onStateChanged.listen((_) => notifyListeners());
+    return refresh();
+  }
+
+  Future<void> refresh() {
+    return Future.wait([
+      _service.level.then((level) => _level = level),
+      _service.state.then((state) => _state = state),
+    ]).then((_) => notifyListeners());
   }
 
   @override

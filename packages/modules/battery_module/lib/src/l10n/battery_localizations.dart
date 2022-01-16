@@ -104,6 +104,18 @@ abstract class BatteryLocalizations {
   /// **'Battery'**
   String get title;
 
+  /// No description provided for @state.
+  ///
+  /// In en, this message translates to:
+  /// **'State'**
+  String get state;
+
+  /// No description provided for @level.
+  ///
+  /// In en, this message translates to:
+  /// **'Level'**
+  String get level;
+
   /// No description provided for @charging.
   ///
   /// In en, this message translates to:
