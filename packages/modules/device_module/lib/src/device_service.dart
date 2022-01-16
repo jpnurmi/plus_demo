@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
-abstract class DeviceService implements ModularService {
+abstract class DeviceService implements PlusService {
   factory DeviceService() => _DeviceInfoPlusService();
 
   Future<Map<String, dynamic>?> getDevice();

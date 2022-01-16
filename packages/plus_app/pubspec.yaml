@@ -1,0 +1,34 @@
+name: plus_app
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.8.0"
+
+dependencies:
+  battery_module:
+    path: ../modules/battery_module
+  connectivity_module:
+    path: ../modules/connectivity_module
+  device_module:
+    path: ../modules/device_module
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  language_module:
+    path: ../modules/language_module
+  network_module:
+    path: ../modules/network_module
+  plus_core:
+    path: ../plus_core
+  theme_module:
+    path: ../modules/theme_module
+  yaru: ^0.2.0
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true

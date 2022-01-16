@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/battery_localizations.dart';

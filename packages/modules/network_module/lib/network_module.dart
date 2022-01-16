@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 import 'src/l10n/network_localizations.dart';
 import 'src/network_page.dart';
 import 'src/network_service.dart';
 
-class NetworkModule implements ModularModule {
+class NetworkModule implements PlusModule {
   NetworkModule() {
     registerService<NetworkService>(NetworkService.new);
   }

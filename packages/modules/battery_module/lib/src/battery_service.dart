@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:battery_plus/battery_plus.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 export 'package:battery_plus/battery_plus.dart' show BatteryState;
 
-abstract class BatteryService implements ModularService {
+abstract class BatteryService implements PlusService {
   factory BatteryService() => _BatteryPlusService();
 
   BatteryState? get state;

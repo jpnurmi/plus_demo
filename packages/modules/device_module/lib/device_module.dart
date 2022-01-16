@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 import 'src/l10n/device_localizations.dart';
 import 'src/device_page.dart';
 import 'src/device_service.dart';
 
-class DeviceModule implements ModularModule {
+class DeviceModule implements PlusModule {
   DeviceModule() {
     registerService<DeviceService>(DeviceService.new);
   }

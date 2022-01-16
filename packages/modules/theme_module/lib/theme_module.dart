@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 import 'src/l10n/theme_localizations.dart';
 import 'src/theme_page.dart';
 
-class ThemeModule implements ModularModule {
+class ThemeModule implements PlusModule {
   @override
   WidgetBuilder get title => ThemePage.title;
 

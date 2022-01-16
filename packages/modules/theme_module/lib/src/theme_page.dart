@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 import 'l10n/theme_localizations.dart';
 
@@ -14,7 +14,7 @@ class ThemePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final app = ModularApp.of(context);
+    final app = PlusApp.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
       child: ValueListenableBuilder<ThemeMode>(

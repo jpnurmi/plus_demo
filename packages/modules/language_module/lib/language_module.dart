@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 import 'src/l10n/language_localizations.dart';
 import 'src/language_page.dart';
 
-class LanguageModule implements ModularModule {
+class LanguageModule implements PlusModule {
   @override
   WidgetBuilder get title => LanguagePage.title;
 

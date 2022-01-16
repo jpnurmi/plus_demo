@@ -1,3 +1,4 @@
-# modular_app
+# Flutter Community Plus Plugins demo
 
-A modular Flutter app example.
+An unofficial [Flutter Community Plus Plugins](https://plus.fluttercommunity.dev/)
+demo.

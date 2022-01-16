@@ -1,4 +1,4 @@
-name: modular_app_example
+name: plus_demo
 
 packages:
   - packages/**

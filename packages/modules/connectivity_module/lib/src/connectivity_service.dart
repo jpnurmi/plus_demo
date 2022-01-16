@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
 typedef ConnectivityState = ConnectivityResult;
 
-abstract class ConnectivityService implements ModularService {
+abstract class ConnectivityService implements PlusService {
   factory ConnectivityService() => _ConnectivityPlusService();
 
   ConnectivityState? get state;

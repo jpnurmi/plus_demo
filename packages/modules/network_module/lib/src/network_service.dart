@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:network_info_plus/network_info_plus.dart';
-import 'package:modular_interface/modular_interface.dart';
+import 'package:plus_core/plus_core.dart';
 
-abstract class NetworkService implements ModularService {
+abstract class NetworkService implements PlusService {
   factory NetworkService() => _NetworkPlusService();
 
   Future<String?> getIP();
