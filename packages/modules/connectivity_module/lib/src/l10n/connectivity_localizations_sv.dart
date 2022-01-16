@@ -11,6 +11,9 @@ class ConnectivityLocalizationsSv extends ConnectivityLocalizations {
   String get title => 'Anslutning';
 
   @override
+  String get state => 'State';
+
+  @override
   String get online => 'Online';
 
   @override

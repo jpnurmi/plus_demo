@@ -104,6 +104,12 @@ abstract class ConnectivityLocalizations {
   /// **'Connectivity'**
   String get title;
 
+  /// No description provided for @state.
+  ///
+  /// In en, this message translates to:
+  /// **'State'**
+  String get state;
+
   /// No description provided for @online.
   ///
   /// In en, this message translates to:

@@ -11,6 +11,9 @@ class ConnectivityLocalizationsNb extends ConnectivityLocalizations {
   String get title => 'Tilkobling';
 
   @override
+  String get state => 'State';
+
+  @override
   String get online => 'Online';
 
   @override

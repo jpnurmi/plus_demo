@@ -11,6 +11,9 @@ class ConnectivityLocalizationsEn extends ConnectivityLocalizations {
   String get title => 'Connectivity';
 
   @override
+  String get state => 'State';
+
+  @override
   String get online => 'Online';
 
   @override

@@ -34,16 +34,19 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<ConnectivityModel>();
+    final l10n = ConnectivityLocalizations.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
-      child: model.state == null
-          ? const CircularProgressIndicator()
-          : ListTile(
-              title: Text(
-                model.state!.localize(context),
-                textAlign: TextAlign.center,
-              ),
+      padding: const EdgeInsets.all(4),
+      child: ListView(
+        children: [
+          Card(
+            child: ListTile(
+              title: Text(model.state?.localize(context) ?? ''),
+              subtitle: Text(l10n.state),
             ),
+          ),
+        ],
+      ),
     );
   }
 }

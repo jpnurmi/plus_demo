@@ -8,31 +8,28 @@ typedef ConnectivityState = ConnectivityResult;
 abstract class ConnectivityService implements PlusService {
   factory ConnectivityService() => _ConnectivityPlusService();
 
-  ConnectivityState? get state;
+  Future<ConnectivityState> get state;
   Stream<ConnectivityState> get onStateChanged;
 }
 
 class _ConnectivityPlusService implements ConnectivityService {
   Connectivity? _connectivity;
-  ConnectivityState? _state;
   StreamController<ConnectivityState>? _controller;
   StreamSubscription<ConnectivityState>? _subscription;
 
   @override
-  ConnectivityState? get state => _state;
+  Future<ConnectivityState> get state => _connectivity!.checkConnectivity();
 
   @override
   Stream<ConnectivityState> get onStateChanged {
-    assert(_controller != null, 'Call ConnectivityService.init()');
+    _controller ??= StreamController<ConnectivityState>.broadcast();
     return _controller!.stream;
   }
 
   @override
   FutureOr<void> init() {
     _connectivity ??= Connectivity();
-    _controller ??= StreamController<ConnectivityState>.broadcast();
     _subscription ??= _connectivity!.onConnectivityChanged.listen((state) {
-      _state = state;
       _controller?.add(state);
     });
   }
