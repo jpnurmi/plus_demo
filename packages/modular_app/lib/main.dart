@@ -1,4 +1,5 @@
 import 'package:battery_module/battery_module.dart';
+import 'package:connectivity_module/connectivity_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:language_module/language_module.dart';
@@ -12,9 +13,10 @@ void main() {
   runApp(ModularApp(
     locale: binding.window.locale,
     modules: <ModularModule>[
-      NetworkModule(),
       BatteryModule(),
+      ConnectivityModule(),
       LanguageModule(),
+      NetworkModule(),
       ThemeModule(),
     ],
     child: const ModularPage(),

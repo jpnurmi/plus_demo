@@ -9,6 +9,8 @@ environment:
 dependencies:
   battery_module:
     path: ../modules/battery_module
+  connectivity_module:
+    path: ../modules/connectivity_module
   flutter:
     sdk: flutter
   flutter_localizations:

@@ -1,0 +1,6 @@
+arb-dir: lib/src/l10n
+template-arb-file: connectivity_en.arb
+output-localization-file: connectivity_localizations.dart
+output-class: ConnectivityLocalizations
+nullable-getter: false
+synthetic-package: false
