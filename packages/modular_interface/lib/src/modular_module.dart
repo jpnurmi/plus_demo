@@ -18,7 +18,7 @@ class ModularApp extends InheritedWidget {
         super(key: key, child: child);
 
   final ValueNotifier<Locale> locale;
-  final Iterable<ModularModule> modules;
+  final List<ModularModule> modules;
   final ValueNotifier<ThemeMode> themeMode;
 
   static ModularApp of(BuildContext context) {

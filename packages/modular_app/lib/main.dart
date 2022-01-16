@@ -9,6 +9,9 @@ import 'package:network_module/network_module.dart';
 import 'package:theme_module/theme_module.dart';
 import 'package:yaru/yaru.dart';
 
+import 'layout/landscape.dart';
+import 'layout/portrait.dart';
+
 void main() {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   runApp(ModularApp(
@@ -54,30 +57,43 @@ class ModularPage extends StatelessWidget {
   }
 }
 
-class ModularLayout extends StatelessWidget {
+class ModularLayout extends StatefulWidget {
   const ModularLayout({Key? key, required this.modules}) : super(key: key);
 
-  final Iterable<ModularModule> modules;
+  final List<ModularModule> modules;
+
+  @override
+  State<ModularLayout> createState() => _ModularLayoutState();
+}
+
+class _ModularLayoutState extends State<ModularLayout> {
+  var _index = -1;
+  var _previousIndex = 0;
+
+  void _setIndex(int index) {
+    _previousIndex = _index;
+    _index = index;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: modules.length,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(AppLocalizations.of(context).title),
-          bottom: TabBar(
-            tabs: modules.map((module) {
-              return Tab(child: module.title(context));
-            }).toList(),
-          ),
-        ),
-        body: TabBarView(
-          children: modules.map((module) {
-            return module.body(context);
-          }).toList(),
-        ),
-      ),
+    return OrientationBuilder(
+      builder: (context, orientation) {
+        switch (orientation) {
+          case Orientation.portrait:
+            return PortraitLayout(
+              index: _index,
+              modules: widget.modules,
+              onSelected: _setIndex,
+            );
+          case Orientation.landscape:
+            return LandscapeLayout(
+              index: _index == -1 ? _previousIndex : _index,
+              modules: widget.modules,
+              onSelected: _setIndex,
+            );
+        }
+      },
     );
   }
 }
