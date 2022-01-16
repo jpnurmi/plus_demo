@@ -34,10 +34,16 @@ class _BatteryPageState extends State<BatteryPage> {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<BatteryModel>();
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
       child: model.state == null
           ? const CircularProgressIndicator()
-          : Text(model.state!.localize(context)),
+          : ListTile(
+              title: Text(
+                model.state!.localize(context),
+                textAlign: TextAlign.center,
+              ),
+            ),
     );
   }
 }
