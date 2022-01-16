@@ -11,6 +11,8 @@ dependencies:
     path: ../modules/battery_module
   connectivity_module:
     path: ../modules/connectivity_module
+  device_module:
+    path: ../modules/device_module
   flutter:
     sdk: flutter
   flutter_localizations:
