@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modular_module/modular_module.dart';
-import 'package:modular_service/modular_service.dart';
+import 'package:modular_interface/modular_interface.dart';
 
 import 'src/l10n/network_localizations.dart';
 import 'src/network_page.dart';

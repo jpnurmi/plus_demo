@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:battery_plus/battery_plus.dart';
-import 'package:modular_service/modular_service.dart';
+import 'package:modular_interface/modular_interface.dart';
 
 export 'package:battery_plus/battery_plus.dart' show BatteryState;
 

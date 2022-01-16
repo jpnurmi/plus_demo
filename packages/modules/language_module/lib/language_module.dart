@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modular_module/modular_module.dart';
+import 'package:modular_interface/modular_interface.dart';
 
 import 'src/l10n/language_localizations.dart';
 import 'src/language_page.dart';

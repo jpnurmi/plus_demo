@@ -18,8 +18,8 @@ dependencies:
   intl: ^0.17.0
   language_module:
     path: ../modules/language_module
-  modular_module:
-    path: ../modular_module
+  modular_interface:
+    path: ../modular_interface
   network_module:
     path: ../modules/network_module
   theme_module:

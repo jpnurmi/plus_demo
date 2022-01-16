@@ -1,5 +1,3 @@
-library modular_service;
-
 import 'dart:async';
 
 import 'package:get_it/get_it.dart';

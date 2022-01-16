@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:modular_service/modular_service.dart';
+import 'package:modular_interface/modular_interface.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/connectivity_localizations.dart';

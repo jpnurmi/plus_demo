@@ -3,7 +3,7 @@ import 'package:connectivity_module/connectivity_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:language_module/language_module.dart';
-import 'package:modular_module/modular_module.dart';
+import 'package:modular_interface/modular_interface.dart';
 import 'package:network_module/network_module.dart';
 import 'package:theme_module/theme_module.dart';
 import 'package:yaru/yaru.dart';

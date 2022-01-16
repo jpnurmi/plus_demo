@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:modular_interface/modular_interface.dart';
 import 'battery_service.dart';
 
 class BatteryModel extends ChangeNotifier {

@@ -1,3 +1,3 @@
-# modular_module
+# modular_inteface
 
 Module interface for a modular Flutter app.

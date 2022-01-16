@@ -1,5 +1,5 @@
-name: modular_service
-description: Service locator for a modular Flutter app.
+name: modular_interface
+description: Module interface for a modular Flutter app.
 publish_to: "none"
 
 environment:

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:modular_service/modular_service.dart';
+import 'package:modular_interface/modular_interface.dart';
 
 typedef NetworkState = ConnectivityResult;
 
