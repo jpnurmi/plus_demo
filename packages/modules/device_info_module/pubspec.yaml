@@ -1,5 +1,5 @@
-name: device_module
-description: An example module for a modular Flutter app.
+name: device_info_module
+description: Device Info +
 publish_to: "none"
 
 environment:

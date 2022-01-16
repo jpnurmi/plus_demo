@@ -6,24 +6,24 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'device_localizations_en.dart';
-import 'device_localizations_fi.dart';
-import 'device_localizations_nb.dart';
-import 'device_localizations_sv.dart';
+import 'device_info_localizations_en.dart';
+import 'device_info_localizations_fi.dart';
+import 'device_info_localizations_nb.dart';
+import 'device_info_localizations_sv.dart';
 
-/// Callers can lookup localized strings with an instance of DeviceLocalizations returned
-/// by `DeviceLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of DeviceInfoLocalizations returned
+/// by `DeviceInfoLocalizations.of(context)`.
 ///
-/// Applications need to include `DeviceLocalizations.delegate()` in their app's
+/// Applications need to include `DeviceInfoLocalizations.delegate()` in their app's
 /// localizationDelegates list, and the locales they support in the app's
 /// supportedLocales list. For example:
 ///
 /// ```
-/// import 'l10n/device_localizations.dart';
+/// import 'l10n/device_info_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: DeviceLocalizations.localizationsDelegates,
-///   supportedLocales: DeviceLocalizations.supportedLocales,
+///   localizationsDelegates: DeviceInfoLocalizations.localizationsDelegates,
+///   supportedLocales: DeviceInfoLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -60,18 +60,18 @@ import 'device_localizations_sv.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the DeviceLocalizations.supportedLocales
+/// be consistent with the languages listed in the DeviceInfoLocalizations.supportedLocales
 /// property.
-abstract class DeviceLocalizations {
-  DeviceLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class DeviceInfoLocalizations {
+  DeviceInfoLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static DeviceLocalizations of(BuildContext context) {
-    return Localizations.of<DeviceLocalizations>(context, DeviceLocalizations)!;
+  static DeviceInfoLocalizations of(BuildContext context) {
+    return Localizations.of<DeviceInfoLocalizations>(context, DeviceInfoLocalizations)!;
   }
 
-  static const LocalizationsDelegate<DeviceLocalizations> delegate = _DeviceLocalizationsDelegate();
+  static const LocalizationsDelegate<DeviceInfoLocalizations> delegate = _DeviceInfoLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -105,34 +105,34 @@ abstract class DeviceLocalizations {
   String get title;
 }
 
-class _DeviceLocalizationsDelegate extends LocalizationsDelegate<DeviceLocalizations> {
-  const _DeviceLocalizationsDelegate();
+class _DeviceInfoLocalizationsDelegate extends LocalizationsDelegate<DeviceInfoLocalizations> {
+  const _DeviceInfoLocalizationsDelegate();
 
   @override
-  Future<DeviceLocalizations> load(Locale locale) {
-    return SynchronousFuture<DeviceLocalizations>(lookupDeviceLocalizations(locale));
+  Future<DeviceInfoLocalizations> load(Locale locale) {
+    return SynchronousFuture<DeviceInfoLocalizations>(lookupDeviceInfoLocalizations(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['en', 'fi', 'nb', 'sv'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_DeviceLocalizationsDelegate old) => false;
+  bool shouldReload(_DeviceInfoLocalizationsDelegate old) => false;
 }
 
-DeviceLocalizations lookupDeviceLocalizations(Locale locale) {
+DeviceInfoLocalizations lookupDeviceInfoLocalizations(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return DeviceLocalizationsEn();
-    case 'fi': return DeviceLocalizationsFi();
-    case 'nb': return DeviceLocalizationsNb();
-    case 'sv': return DeviceLocalizationsSv();
+    case 'en': return DeviceInfoLocalizationsEn();
+    case 'fi': return DeviceInfoLocalizationsFi();
+    case 'nb': return DeviceInfoLocalizationsNb();
+    case 'sv': return DeviceInfoLocalizationsSv();
   }
 
   throw FlutterError(
-    'DeviceLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'DeviceInfoLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'

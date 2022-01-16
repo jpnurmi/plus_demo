@@ -1,6 +1,6 @@
 import 'package:battery_module/battery_module.dart';
 import 'package:connectivity_module/connectivity_module.dart';
-import 'package:device_module/device_module.dart';
+import 'package:device_info_module/device_info_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:language_module/language_module.dart';
@@ -18,7 +18,7 @@ void main() {
     modules: <PlusModule>[
       BatteryModule(),
       ConnectivityModule(),
-      DeviceModule(),
+      DeviceInfoModule(),
       LanguageModule(),
       NetworkModule(),
       ThemeModule(),

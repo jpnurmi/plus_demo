@@ -1,6 +1,0 @@
-arb-dir: lib/src/l10n
-template-arb-file: device_en.arb
-output-localization-file: device_localizations.dart
-output-class: DeviceLocalizations
-nullable-getter: false
-synthetic-package: false
