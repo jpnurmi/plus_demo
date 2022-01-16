@@ -1,5 +1,5 @@
 name: battery_module
-description: An example module for a modular Flutter app.
+description: Battery +
 publish_to: "none"
 
 environment:
