@@ -1,0 +1,6 @@
+arb-dir: lib/src/l10n
+template-arb-file: network_info_en.arb
+output-localization-file: network_info_localizations.dart
+output-class: NetworkInfoLocalizations
+nullable-getter: false
+synthetic-package: false

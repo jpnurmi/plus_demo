@@ -1,11 +1,11 @@
 
 
 
-import 'network_localizations.dart';
+import 'network_info_localizations.dart';
 
 /// The translations for Norwegian Bokmål (`nb`).
-class NetworkLocalizationsNb extends NetworkLocalizations {
-  NetworkLocalizationsNb([String locale = 'nb']) : super(locale);
+class NetworkInfoLocalizationsNb extends NetworkInfoLocalizations {
+  NetworkInfoLocalizationsNb([String locale = 'nb']) : super(locale);
 
   @override
   String get title => 'Nettverk';

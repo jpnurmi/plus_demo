@@ -1,5 +1,5 @@
-name: network_module
-description: An example module for a modular Flutter app.
+name: network_info_module
+description: Network Info +
 publish_to: "none"
 
 environment:

@@ -4,7 +4,7 @@ import 'package:device_info_module/device_info_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:language_module/language_module.dart';
-import 'package:network_module/network_module.dart';
+import 'package:network_info_module/network_info_module.dart';
 import 'package:plus_core/plus_core.dart';
 import 'package:theme_module/theme_module.dart';
 import 'package:yaru/yaru.dart';
@@ -20,7 +20,7 @@ void main() {
       ConnectivityModule(),
       DeviceInfoModule(),
       LanguageModule(),
-      NetworkModule(),
+      NetworkInfoModule(),
       ThemeModule(),
     ],
     child: const PlusPage(),

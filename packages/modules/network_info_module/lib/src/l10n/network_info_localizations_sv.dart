@@ -1,11 +1,11 @@
 
 
 
-import 'network_localizations.dart';
+import 'network_info_localizations.dart';
 
 /// The translations for Swedish (`sv`).
-class NetworkLocalizationsSv extends NetworkLocalizations {
-  NetworkLocalizationsSv([String locale = 'sv']) : super(locale);
+class NetworkInfoLocalizationsSv extends NetworkInfoLocalizations {
+  NetworkInfoLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
   String get title => 'Nätverk';

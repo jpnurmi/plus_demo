@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'network_service.dart';
+import 'network_info_service.dart';
 
-class NetworkModel extends ChangeNotifier {
-  NetworkModel(this._service);
+class NetworkInfoModel extends ChangeNotifier {
+  NetworkInfoModel(this._service);
 
-  final NetworkService _service;
+  final NetworkInfoService _service;
   String? _ip;
   String? _name;
 

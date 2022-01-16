@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:plus_core/plus_core.dart';
 
-abstract class NetworkService implements PlusService {
-  factory NetworkService() => _NetworkPlusService();
+abstract class NetworkInfoService implements PlusService {
+  factory NetworkInfoService() => _NetworkPlusService();
 
   Future<String?> getIP();
   Future<String?> getName();
 }
 
-class _NetworkPlusService implements NetworkService {
+class _NetworkPlusService implements NetworkInfoService {
   NetworkInfo? _info;
 
   @override

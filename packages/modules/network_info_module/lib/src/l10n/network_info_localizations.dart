@@ -6,24 +6,24 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'network_localizations_en.dart';
-import 'network_localizations_fi.dart';
-import 'network_localizations_nb.dart';
-import 'network_localizations_sv.dart';
+import 'network_info_localizations_en.dart';
+import 'network_info_localizations_fi.dart';
+import 'network_info_localizations_nb.dart';
+import 'network_info_localizations_sv.dart';
 
-/// Callers can lookup localized strings with an instance of NetworkLocalizations returned
-/// by `NetworkLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of NetworkInfoLocalizations returned
+/// by `NetworkInfoLocalizations.of(context)`.
 ///
-/// Applications need to include `NetworkLocalizations.delegate()` in their app's
+/// Applications need to include `NetworkInfoLocalizations.delegate()` in their app's
 /// localizationDelegates list, and the locales they support in the app's
 /// supportedLocales list. For example:
 ///
 /// ```
-/// import 'l10n/network_localizations.dart';
+/// import 'l10n/network_info_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: NetworkLocalizations.localizationsDelegates,
-///   supportedLocales: NetworkLocalizations.supportedLocales,
+///   localizationsDelegates: NetworkInfoLocalizations.localizationsDelegates,
+///   supportedLocales: NetworkInfoLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -60,18 +60,18 @@ import 'network_localizations_sv.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the NetworkLocalizations.supportedLocales
+/// be consistent with the languages listed in the NetworkInfoLocalizations.supportedLocales
 /// property.
-abstract class NetworkLocalizations {
-  NetworkLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class NetworkInfoLocalizations {
+  NetworkInfoLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static NetworkLocalizations of(BuildContext context) {
-    return Localizations.of<NetworkLocalizations>(context, NetworkLocalizations)!;
+  static NetworkInfoLocalizations of(BuildContext context) {
+    return Localizations.of<NetworkInfoLocalizations>(context, NetworkInfoLocalizations)!;
   }
 
-  static const LocalizationsDelegate<NetworkLocalizations> delegate = _NetworkLocalizationsDelegate();
+  static const LocalizationsDelegate<NetworkInfoLocalizations> delegate = _NetworkInfoLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -117,34 +117,34 @@ abstract class NetworkLocalizations {
   String get offline;
 }
 
-class _NetworkLocalizationsDelegate extends LocalizationsDelegate<NetworkLocalizations> {
-  const _NetworkLocalizationsDelegate();
+class _NetworkInfoLocalizationsDelegate extends LocalizationsDelegate<NetworkInfoLocalizations> {
+  const _NetworkInfoLocalizationsDelegate();
 
   @override
-  Future<NetworkLocalizations> load(Locale locale) {
-    return SynchronousFuture<NetworkLocalizations>(lookupNetworkLocalizations(locale));
+  Future<NetworkInfoLocalizations> load(Locale locale) {
+    return SynchronousFuture<NetworkInfoLocalizations>(lookupNetworkInfoLocalizations(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['en', 'fi', 'nb', 'sv'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_NetworkLocalizationsDelegate old) => false;
+  bool shouldReload(_NetworkInfoLocalizationsDelegate old) => false;
 }
 
-NetworkLocalizations lookupNetworkLocalizations(Locale locale) {
+NetworkInfoLocalizations lookupNetworkInfoLocalizations(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return NetworkLocalizationsEn();
-    case 'fi': return NetworkLocalizationsFi();
-    case 'nb': return NetworkLocalizationsNb();
-    case 'sv': return NetworkLocalizationsSv();
+    case 'en': return NetworkInfoLocalizationsEn();
+    case 'fi': return NetworkInfoLocalizationsFi();
+    case 'nb': return NetworkInfoLocalizationsNb();
+    case 'sv': return NetworkInfoLocalizationsSv();
   }
 
   throw FlutterError(
-    'NetworkLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'NetworkInfoLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'
