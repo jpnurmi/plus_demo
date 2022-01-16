@@ -101,7 +101,7 @@ abstract class ConnectivityLocalizations {
   /// No description provided for @title.
   ///
   /// In en, this message translates to:
-  /// **'Connectivity'**
+  /// **'Connectivity +'**
   String get title;
 
   /// No description provided for @state.

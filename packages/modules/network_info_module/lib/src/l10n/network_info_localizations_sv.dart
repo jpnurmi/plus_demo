@@ -8,7 +8,7 @@ class NetworkInfoLocalizationsSv extends NetworkInfoLocalizations {
   NetworkInfoLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get title => 'Nätverk';
+  String get title => 'Network Info +';
 
   @override
   String get online => 'Online';

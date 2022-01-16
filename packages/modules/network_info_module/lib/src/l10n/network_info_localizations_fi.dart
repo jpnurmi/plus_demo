@@ -8,7 +8,7 @@ class NetworkInfoLocalizationsFi extends NetworkInfoLocalizations {
   NetworkInfoLocalizationsFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get title => 'Verkko';
+  String get title => 'Network Info +';
 
   @override
   String get online => 'Online';

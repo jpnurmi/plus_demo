@@ -8,5 +8,5 @@ class DeviceInfoLocalizationsFi extends DeviceInfoLocalizations {
   DeviceInfoLocalizationsFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get title => 'Laite';
+  String get title => 'Device Info +';
 }

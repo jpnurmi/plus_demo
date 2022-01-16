@@ -8,5 +8,5 @@ class DeviceInfoLocalizationsSv extends DeviceInfoLocalizations {
   DeviceInfoLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get title => 'Enhet';
+  String get title => 'Device Info +';
 }

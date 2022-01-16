@@ -101,7 +101,7 @@ abstract class BatteryLocalizations {
   /// No description provided for @title.
   ///
   /// In en, this message translates to:
-  /// **'Battery'**
+  /// **'Battery +'**
   String get title;
 
   /// No description provided for @state.

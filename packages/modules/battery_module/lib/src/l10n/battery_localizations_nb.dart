@@ -8,7 +8,7 @@ class BatteryLocalizationsNb extends BatteryLocalizations {
   BatteryLocalizationsNb([String locale = 'nb']) : super(locale);
 
   @override
-  String get title => 'Batteri';
+  String get title => 'Battery +';
 
   @override
   String get state => 'State';

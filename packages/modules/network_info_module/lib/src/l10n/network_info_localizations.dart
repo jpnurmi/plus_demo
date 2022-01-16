@@ -101,7 +101,7 @@ abstract class NetworkInfoLocalizations {
   /// No description provided for @title.
   ///
   /// In en, this message translates to:
-  /// **'Network'**
+  /// **'Network Info +'**
   String get title;
 
   /// No description provided for @online.

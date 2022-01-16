@@ -8,7 +8,7 @@ class ConnectivityLocalizationsFi extends ConnectivityLocalizations {
   ConnectivityLocalizationsFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get title => 'Yhteys';
+  String get title => 'Connectivity +';
 
   @override
   String get state => 'State';

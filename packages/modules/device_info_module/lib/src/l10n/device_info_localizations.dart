@@ -101,7 +101,7 @@ abstract class DeviceInfoLocalizations {
   /// No description provided for @title.
   ///
   /// In en, this message translates to:
-  /// **'Device'**
+  /// **'Device Info +'**
   String get title;
 }
 

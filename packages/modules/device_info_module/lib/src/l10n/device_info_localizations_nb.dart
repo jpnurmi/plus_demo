@@ -8,5 +8,5 @@ class DeviceInfoLocalizationsNb extends DeviceInfoLocalizations {
   DeviceInfoLocalizationsNb([String locale = 'nb']) : super(locale);
 
   @override
-  String get title => 'Enhet';
+  String get title => 'Device Info +';
 }

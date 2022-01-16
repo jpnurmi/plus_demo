@@ -8,7 +8,7 @@ class BatteryLocalizationsSv extends BatteryLocalizations {
   BatteryLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get title => 'Batteri';
+  String get title => 'Battery +';
 
   @override
   String get state => 'State';

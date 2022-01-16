@@ -8,7 +8,7 @@ class ConnectivityLocalizationsSv extends ConnectivityLocalizations {
   ConnectivityLocalizationsSv([String locale = 'sv']) : super(locale);
 
   @override
-  String get title => 'Anslutning';
+  String get title => 'Connectivity +';
 
   @override
   String get state => 'State';

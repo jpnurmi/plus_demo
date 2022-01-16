@@ -8,7 +8,7 @@ class ConnectivityLocalizationsEn extends ConnectivityLocalizations {
   ConnectivityLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get title => 'Connectivity';
+  String get title => 'Connectivity +';
 
   @override
   String get state => 'State';

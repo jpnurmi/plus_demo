@@ -8,7 +8,7 @@ class BatteryLocalizationsFi extends BatteryLocalizations {
   BatteryLocalizationsFi([String locale = 'fi']) : super(locale);
 
   @override
-  String get title => 'Akku';
+  String get title => 'Battery +';
 
   @override
   String get state => 'State';

@@ -8,7 +8,7 @@ class ConnectivityLocalizationsNb extends ConnectivityLocalizations {
   ConnectivityLocalizationsNb([String locale = 'nb']) : super(locale);
 
   @override
-  String get title => 'Tilkobling';
+  String get title => 'Connectivity +';
 
   @override
   String get state => 'State';
