@@ -26,7 +26,7 @@ class PlusApp extends InheritedWidget {
 
   @override
   bool updateShouldNotify(covariant PlusApp oldWidget) {
-    return locale != oldWidget.locale;
+    return locale != oldWidget.locale || themeMode != oldWidget.themeMode;
   }
 }
 
