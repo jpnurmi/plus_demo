@@ -34,12 +34,53 @@ class _NetworkInfoPageState extends State<NetworkInfoPage> {
   @override
   Widget build(BuildContext context) {
     final model = context.watch<NetworkInfoModel>();
+    final l10n = NetworkInfoLocalizations.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
-      child: Column(
+      padding: const EdgeInsets.all(4),
+      child: ListView(
         children: [
-          ListTile(title: Center(child: Text('Name: ${model.wifiName}'))),
-          ListTile(title: Center(child: Text('IP: ${model.wifiIP}'))),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiName ?? ''),
+              subtitle: Text(l10n.name),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiBSSID ?? ''),
+              subtitle: Text(l10n.bssid),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiIP ?? ''),
+              subtitle: Text(l10n.ipv4),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiIPv6 ?? ''),
+              subtitle: Text(l10n.ipv6),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiSubmask ?? ''),
+              subtitle: Text(l10n.subnet),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiGatewayIP ?? ''),
+              subtitle: Text(l10n.gateway),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text(model.wifiBroadcast ?? ''),
+              subtitle: Text(l10n.broadcast),
+            ),
+          ),
         ],
       ),
     );

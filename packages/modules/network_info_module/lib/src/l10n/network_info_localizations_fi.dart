@@ -15,4 +15,25 @@ class NetworkInfoLocalizationsFi extends NetworkInfoLocalizations {
 
   @override
   String get offline => 'Offline';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get bssid => 'BSSID';
+
+  @override
+  String get ipv4 => 'IPv4';
+
+  @override
+  String get ipv6 => 'IPv6';
+
+  @override
+  String get subnet => 'Subnet';
+
+  @override
+  String get gateway => 'Gateway';
+
+  @override
+  String get broadcast => 'Broadcast';
 }

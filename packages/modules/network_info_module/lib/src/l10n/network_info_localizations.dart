@@ -115,6 +115,48 @@ abstract class NetworkInfoLocalizations {
   /// In en, this message translates to:
   /// **'Offline'**
   String get offline;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @bssid.
+  ///
+  /// In en, this message translates to:
+  /// **'BSSID'**
+  String get bssid;
+
+  /// No description provided for @ipv4.
+  ///
+  /// In en, this message translates to:
+  /// **'IPv4'**
+  String get ipv4;
+
+  /// No description provided for @ipv6.
+  ///
+  /// In en, this message translates to:
+  /// **'IPv6'**
+  String get ipv6;
+
+  /// No description provided for @subnet.
+  ///
+  /// In en, this message translates to:
+  /// **'Subnet'**
+  String get subnet;
+
+  /// No description provided for @gateway.
+  ///
+  /// In en, this message translates to:
+  /// **'Gateway'**
+  String get gateway;
+
+  /// No description provided for @broadcast.
+  ///
+  /// In en, this message translates to:
+  /// **'Broadcast'**
+  String get broadcast;
 }
 
 class _NetworkInfoLocalizationsDelegate extends LocalizationsDelegate<NetworkInfoLocalizations> {

@@ -1,5 +1,12 @@
 {
   "title": "Network Info +",
   "online": "Online",
-  "offline": "Offline"
+  "offline": "Offline",
+  "name": "Name",
+  "bssid": "BSSID",
+  "ipv4": "IPv4",
+  "ipv6": "IPv6",
+  "subnet": "Subnet",
+  "gateway": "Gateway",
+  "broadcast": "Broadcast"
 }
