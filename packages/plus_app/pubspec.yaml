@@ -18,6 +18,8 @@ dependencies:
   intl: ^0.17.0
   network_info_module:
     path: ../modules/network_info_module
+  package_info_module:
+    path: ../modules/package_info_module
   plus_core:
     path: ../plus_core
   yaru: ^0.2.0

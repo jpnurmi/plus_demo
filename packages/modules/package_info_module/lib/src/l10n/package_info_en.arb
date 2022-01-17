@@ -1,0 +1,8 @@
+{
+  "title": "Package Info +",
+  "appName": "App",
+  "buildNumber": "Build",
+  "buildSignature": "Signature",
+  "packageName": "Package",
+  "version": "Version"
+}
