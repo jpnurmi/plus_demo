@@ -48,7 +48,7 @@ class PlusPage extends StatelessWidget {
                 .where((module) => module.localizations != null)
                 .map((module) => module.localizations!),
           ],
-          title: 'Plus Demo',
+          onGenerateTitle: (context) => AppLocalizations.of(context).title,
           theme: yaruLight,
           darkTheme: yaruDark,
           themeMode: app.themeMode.value,
