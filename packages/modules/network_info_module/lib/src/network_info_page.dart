@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:network_info_plus/network_info_plus.dart';
 import 'package:plus_core/plus_core.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/network_info_localizations.dart';
 import 'network_info_model.dart';
-import 'network_info_service.dart';
 
 class NetworkInfoPage extends StatefulWidget {
   const NetworkInfoPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class NetworkInfoPage extends StatefulWidget {
 
   static Widget body(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => NetworkInfoModel(getService<NetworkInfoService>()),
+      create: (_) => NetworkInfoModel(getPlugin<NetworkInfo>()),
       child: const NetworkInfoPage(),
     );
   }
@@ -38,8 +38,8 @@ class _NetworkInfoPageState extends State<NetworkInfoPage> {
       padding: const EdgeInsets.symmetric(vertical: kMinInteractiveDimension),
       child: Column(
         children: [
-          ListTile(title: Center(child: Text('Name: ${model.name}'))),
-          ListTile(title: Center(child: Text('IP: ${model.ip}'))),
+          ListTile(title: Center(child: Text('Name: ${model.wifiName}'))),
+          ListTile(title: Center(child: Text('IP: ${model.wifiIP}'))),
         ],
       ),
     );

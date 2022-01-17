@@ -1,22 +1,22 @@
 import 'dart:async';
 
+import 'package:network_info_plus/network_info_plus.dart';
 import 'package:flutter/foundation.dart';
-import 'network_info_service.dart';
 
 class NetworkInfoModel extends ChangeNotifier {
-  NetworkInfoModel(this._service);
+  NetworkInfoModel(this._networkInfo);
 
-  final NetworkInfoService _service;
-  String? _ip;
-  String? _name;
+  final NetworkInfo _networkInfo;
+  String? _wifiIP;
+  String? _wifiName;
 
-  String? get ip => _ip;
-  String? get name => _name;
+  String? get wifiIP => _wifiIP;
+  String? get wifiName => _wifiName;
 
   Future<void> init() async {
-    await _service.init();
-    _ip = await _service.getIP();
-    _name = await _service.getName();
-    notifyListeners();
+    return Future.wait([
+      _networkInfo.getWifiIP().then((value) => _wifiIP = value),
+      _networkInfo.getWifiName().then((value) => _wifiName = value),
+    ]).then((_) => notifyListeners());
   }
 }

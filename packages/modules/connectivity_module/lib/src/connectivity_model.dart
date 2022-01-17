@@ -1,25 +1,29 @@
 import 'dart:async';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
-import 'connectivity_service.dart';
+
+typedef ConnectivityState = ConnectivityResult;
 
 class ConnectivityModel extends ChangeNotifier {
-  ConnectivityModel(this._service);
+  ConnectivityModel(this._connectivity);
 
-  final ConnectivityService _service;
+  final Connectivity _connectivity;
   StreamSubscription? _sub;
   ConnectivityState? _state;
 
   ConnectivityState? get state => _state;
 
-  Future<void> init() async {
-    await _service.init();
-    _sub = _service.onStateChanged.listen((_) => notifyListeners());
+  Future<void> init() {
+    _sub = _connectivity.onConnectivityChanged.listen((state) {
+      _state = state;
+      notifyListeners();
+    });
     return refresh();
   }
 
   Future<void> refresh() {
-    return _service.state.then((state) {
+    return _connectivity.checkConnectivity().then((state) {
       _state = state;
       notifyListeners();
     });

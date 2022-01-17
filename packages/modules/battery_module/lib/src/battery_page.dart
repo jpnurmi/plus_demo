@@ -1,10 +1,10 @@
+import 'package:battery_plus/battery_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:plus_core/plus_core.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/battery_localizations.dart';
 import 'battery_model.dart';
-import 'battery_service.dart';
 
 class BatteryPage extends StatefulWidget {
   const BatteryPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class BatteryPage extends StatefulWidget {
 
   static Widget body(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => BatteryModel(getService<BatteryService>()),
+      create: (_) => BatteryModel(getPlugin<Battery>()),
       child: const BatteryPage(),
     );
   }

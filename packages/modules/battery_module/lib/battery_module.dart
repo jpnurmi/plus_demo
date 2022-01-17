@@ -1,13 +1,13 @@
+import 'package:battery_plus/battery_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:plus_core/plus_core.dart';
 
 import 'src/l10n/battery_localizations.dart';
 import 'src/battery_page.dart';
-import 'src/battery_service.dart';
 
 class BatteryModule implements PlusModule {
   BatteryModule() {
-    registerService(BatteryService.new);
+    registerPlugin(() => Battery());
   }
 
   @override

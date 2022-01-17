@@ -1,10 +1,10 @@
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:plus_core/plus_core.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/device_info_localizations.dart';
 import 'device_info_model.dart';
-import 'device_info_service.dart';
 
 class DeviceInfoPage extends StatefulWidget {
   const DeviceInfoPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class DeviceInfoPage extends StatefulWidget {
 
   static Widget body(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => DeviceInfoModel(getService<DeviceInfoService>()),
+      create: (_) => DeviceInfoModel(getPlugin<DeviceInfoPlugin>()),
       child: const DeviceInfoPage(),
     );
   }

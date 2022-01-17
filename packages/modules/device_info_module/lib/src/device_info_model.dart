@@ -1,19 +1,18 @@
 import 'dart:async';
 
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
-import 'device_info_service.dart';
 
 class DeviceInfoModel extends ChangeNotifier {
-  DeviceInfoModel(this._service);
+  DeviceInfoModel(this._deviceInfo);
 
-  final DeviceInfoService _service;
-  Map<String, dynamic>? _info;
+  final DeviceInfoPlugin _deviceInfo;
+  Map<String, dynamic>? _value;
 
-  Map<String, dynamic>? get deviceInfo => _info;
+  Map<String, dynamic>? get deviceInfo => _value;
 
   Future<void> init() async {
-    await _service.init();
-    _info = await _service.getDeviceInfo();
+    _value = await _deviceInfo.deviceInfo.then((value) => value.toMap());
     notifyListeners();
   }
 }

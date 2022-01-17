@@ -1,10 +1,10 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:plus_core/plus_core.dart';
 import 'package:provider/provider.dart';
 
 import 'l10n/connectivity_localizations.dart';
 import 'connectivity_model.dart';
-import 'connectivity_service.dart';
 
 class ConnectivityPage extends StatefulWidget {
   const ConnectivityPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class ConnectivityPage extends StatefulWidget {
 
   static Widget body(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => ConnectivityModel(getService<ConnectivityService>()),
+      create: (_) => ConnectivityModel(getPlugin<Connectivity>()),
       child: const ConnectivityPage(),
     );
   }
