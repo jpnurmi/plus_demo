@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plus_core/plus_core.dart';
 
-import 'landscape.dart';
-import 'portrait.dart';
+import 'landscape_layout.dart';
+import 'portrait_layout.dart';
 
 class PlusLayout extends StatefulWidget {
   const PlusLayout({

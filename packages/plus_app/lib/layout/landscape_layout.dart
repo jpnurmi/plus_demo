@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:plus_core/plus_core.dart';
 
-const kLeftPaneWidth = 245.0;
+const kLeftPaneWidth = 200.0;
 
 class LandscapeLayout extends StatefulWidget {
   const LandscapeLayout({
